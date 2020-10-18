@@ -437,7 +437,7 @@ done
 base_steam_cmd="/usr/games/steamcmd +login $steam_username $steam_password"
 
 if ! $skip_steam_check ; then
-   arma_update_cmd="$base_steam_cmd +force_install_dir $arma_dir +app_update 233780 -beta profiling -betapassword CautionSpecialProfilingAndTestingBranchArma3 $force_validate +quit"
+   arma_update_cmd="$base_steam_cmd +force_install_dir $arma_dir +app_update 233780 $force_validate +quit"
    run_steam_cmd "$arma_update_cmd" $arma_download_attempts "downloading ARMA"
    if [ $? != 0 ]; then
       exit 1
